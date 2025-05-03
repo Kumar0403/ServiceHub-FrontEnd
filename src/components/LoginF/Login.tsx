@@ -24,7 +24,7 @@ export const Login = () => {
       const token=response.data.token;
       const role =response.data.role;
       const status = response.data.status;
-      const userInfo: any = jwtDecode(token,response.data.JWT_SECRET).user;
+      const userInfo: any = jwtDecode(token,response.data.JWT_SECRET);
       //storing the logged user details in localstorage
       localStorage.setItem("userInfo",JSON.stringify(userInfo));
       if( status === 'Inactive'){
